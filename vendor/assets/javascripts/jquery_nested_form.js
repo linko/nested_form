@@ -70,14 +70,14 @@ jQuery(function($) {
       return false;
     },
     fieldsCount: function(form) {
-      var total_fields   = $(form).find('.fields');
-      var deleted_fields = $(form).find('.deleted.fields');
+      var total_fields   = $(form).find('.fields').length;
+      var deleted_fields = $(form).find('.deleted.fields').length;
       return total_fields - deleted_fields;
     },
     canAddNewField: function(form) {
       var max = parseInt($(form).data('max-fields'));
-      if (max.length) {
-        return (fieldsCount(form) < max )
+      if (max > 0) {
+        return (this.fieldsCount(form) < max )
       }
       else {
         return true
