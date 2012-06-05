@@ -12,7 +12,7 @@ jQuery(function($) {
       var content = $('#' + assoc + '_fields_blueprint').html(); // Fields template
       var form    = $(link).closest('form');
 
-      if (!canAddNewField(form)) return false;
+      if (!this.canAddNewField(form)) return false;
 
 
       // Make the context correct by replacing new_<parents> with the generated ID
